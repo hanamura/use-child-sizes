@@ -6,8 +6,19 @@ type Size = {
   entry: ResizeObserverEntry | null
 }
 
-export function useChildSizes<T extends HTMLElement>(): [RefObject<T>, Size[]] {
-  const ref = useRef<T>(null)
+export function useChildSizes(options?: { ref: RefObject<HTMLElement> }): Size[]
+
+export function useChildSizes<T extends HTMLElement>(options?: {}): [
+  RefObject<T>,
+  Size[]
+]
+
+export function useChildSizes<T extends HTMLElement>(
+  options: {
+    ref?: RefObject<HTMLElement>
+  } = {}
+): Size[] | [RefObject<T>, Size[]] {
+  const ref = options.ref || useRef<T>(null)
   const [sizes, setSizes] = useState<Size[]>([])
 
   useEffect(() => {
@@ -62,5 +73,9 @@ export function useChildSizes<T extends HTMLElement>(): [RefObject<T>, Size[]] {
     }
   }, [])
 
-  return [ref, sizes]
+  if (options.ref) {
+    return sizes
+  } else {
+    return [ref as RefObject<T>, sizes]
+  }
 }
