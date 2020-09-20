@@ -11,13 +11,12 @@ interface DisplayState {
 
 const initialState: DisplayState = {
   store: [
-    'https://source.unsplash.com/F-gfrzSIPZo/1600x900',
     'https://source.unsplash.com/f68m3uHNT_A/1600x1600',
     'https://source.unsplash.com/xsIOCYmlI1g/900x1600',
     'https://source.unsplash.com/KMn4VEeEPR8/1600x1200',
     'https://source.unsplash.com/6ArTTluciuA/1200x1600'
   ],
-  front: []
+  front: ['https://source.unsplash.com/F-gfrzSIPZo/1600x900']
 }
 
 const reducer: (
