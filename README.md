@@ -2,26 +2,40 @@
 
 > A React hook to get the sizes of child elements of the specified element.
 
-[![NPM](https://img.shields.io/npm/v/use-child-sizes.svg)](https://www.npmjs.com/package/use-child-sizes) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/use-child-sizes.svg)](https://www.npmjs.com/package/use-child-sizes)
 
 ## Install
 
 ```bash
-npm install --save use-child-sizes
+npm install use-child-sizes
 ```
 
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React from 'react'
+import useChildSizes from 'use-child-sizes'
 
-import MyComponent from 'use-child-sizes'
-import 'use-child-sizes/dist/index.css'
+const Example = () => {
+  const [ref, sizes] = useChildSizes<HTMLUListElement>()
+  const maxHeight = sizes.reduce(
+    (maxHeight, { height }) => (height > maxHeight ? height : maxHeight),
+    0
+  )
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+  return (
+    <ul ref={ref} style={{ height: maxHeight }} className='...'>
+      <li>
+        <img src='...' />
+      </li>
+      <li>
+        <img src='...' />
+      </li>
+      <li>
+        <img src='...' />
+      </li>
+    </ul>
+  )
 }
 ```
 
