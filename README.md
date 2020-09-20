@@ -1,6 +1,6 @@
 # use-child-sizes
 
-> Made with create-react-library
+> A React hook to get the sizes of child elements of the specified element.
 
 [![NPM](https://img.shields.io/npm/v/use-child-sizes.svg)](https://www.npmjs.com/package/use-child-sizes) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
