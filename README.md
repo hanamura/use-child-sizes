@@ -39,6 +39,10 @@ const Example = () => {
 }
 ```
 
+### IE?
+
+Use [ResizeObserver Polyfill](https://github.com/que-etc/resize-observer-polyfill).
+
 ## License
 
 MIT © [Taro Hanamura](https://github.com/hanamura)
