@@ -1,3 +1,23 @@
+/* buttons */
+
+.App_Buttons {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+}
+
+.App_Buttons button + button {
+  margin-left: 5px;
+}
+
+/* side-by-side */
+
+.App_SideBySide {
+  display: flex;
+}
+
+/* images */
+
 .App_Images {
   margin: 0;
   padding: 0;
@@ -5,7 +25,10 @@
 }
 
 .App_Images li {
+  background: lightgray;
+  line-height: 1em;
   list-style: none;
+  min-height: 1em;
 }
 
 .App_Images li + li {
@@ -15,4 +38,31 @@
 .App_Images img {
   display: block;
   width: 100%;
+}
+
+/* boxes */
+
+.App_Boxes {
+  margin: 0 0 0 10px;
+  padding: 0;
+  width: 200px;
+}
+
+.App_Boxes li {
+  background: lightgray;
+  list-style: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.App_Boxes li + li {
+  margin-top: 10px;
+}
+
+.App_Boxes span {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
 }

@@ -75,29 +75,43 @@ const reducer: (
 }
 
 const App = () => {
-  const [{ front }, dispatch] = useReducer(reducer, initialState)
+  const [{ store, front }, dispatch] = useReducer(reducer, initialState)
   const [ref, sizes] = useChildSizes<HTMLUListElement>()
 
   return (
     <div>
-      <div>
-        <button onClick={() => dispatch('addRandom')}>add random</button>
-        <button onClick={() => dispatch('removeRandom')}>remove random</button>
+      <div className={styles.App_Buttons}>
+        <button onClick={() => dispatch('addRandom')} disabled={!store.length}>
+          Add random
+        </button>
+        <button
+          onClick={() => dispatch('removeRandom')}
+          disabled={!front.length}
+        >
+          Remove random
+        </button>
       </div>
-      <ul>
-        {sizes.map(({ width, height }, i) => (
-          <li key={i.toString()}>
-            {width} x {height}
-          </li>
-        ))}
-      </ul>
-      <ul className={styles.App_Images} ref={ref}>
-        {front.map((url, i) => (
-          <li key={i.toString()}>
-            <img src={url} alt='' />
-          </li>
-        ))}
-      </ul>
+      <div className={styles.App_SideBySide}>
+        <ul className={styles.App_Images} ref={ref}>
+          {front.map((url) => (
+            <li key={url}>
+              <img src={url} alt='' />
+            </li>
+          ))}
+        </ul>
+        <ul className={styles.App_Boxes}>
+          {sizes.map(({ width, height }, i) => (
+            <li
+              key={i.toString()}
+              style={{ paddingTop: `${(height / width) * 100}%` }}
+            >
+              <span>
+                {width} × {height}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }
