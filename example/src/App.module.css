@@ -1,0 +1,18 @@
+.App_Images {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+}
+
+.App_Images li {
+  list-style: none;
+}
+
+.App_Images li + li {
+  margin-top: 10px;
+}
+
+.App_Images img {
+  display: block;
+  width: 100%;
+}
