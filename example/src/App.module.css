@@ -14,6 +14,8 @@
 
 .App_SideBySide {
   display: flex;
+  margin: 0 auto;
+  width: 30%;
 }
 
 /* images */
@@ -21,7 +23,7 @@
 .App_Images {
   margin: 0;
   padding: 0;
-  width: 200px;
+  width: 49%;
 }
 
 .App_Images li {
@@ -32,7 +34,7 @@
 }
 
 .App_Images li + li {
-  margin-top: 10px;
+  margin-top: 4%;
 }
 
 .App_Images img {
@@ -43,9 +45,9 @@
 /* boxes */
 
 .App_Boxes {
-  margin: 0 0 0 10px;
+  margin: 0 0 0 2%;
   padding: 0;
-  width: 200px;
+  width: 49%;
 }
 
 .App_Boxes li {
@@ -56,7 +58,7 @@
 }
 
 .App_Boxes li + li {
-  margin-top: 10px;
+  margin-top: 4%;
 }
 
 .App_Boxes span {
