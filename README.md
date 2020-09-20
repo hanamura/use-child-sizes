@@ -14,7 +14,7 @@ npm install use-child-sizes
 
 ```tsx
 import React from 'react'
-import useChildSizes from 'use-child-sizes'
+import { useChildSizes } from 'use-child-sizes'
 
 const Example = () => {
   const [ref, sizes] = useChildSizes<HTMLUListElement>()
