@@ -25,7 +25,9 @@ const reducer: (
 ) => DisplayState = ({ store, front }, action) => {
   switch (action) {
     case 'addRandom': {
-      let times = Math.floor(Math.random() * (store.length + 1))
+      if (!store.length) return { store, front }
+
+      let times = Math.floor(Math.random() * store.length) + 1
       let state = { store: [...store], front: [...front] }
 
       while (times-- > 0) {
@@ -48,7 +50,9 @@ const reducer: (
       return state
     }
     case 'removeRandom': {
-      let times = Math.floor(Math.random() * (front.length + 1))
+      if (!front.length) return { store, front }
+
+      let times = Math.floor(Math.random() * front.length) + 1
       let state = { store: [...store], front: [...front] }
 
       while (times-- > 0) {
