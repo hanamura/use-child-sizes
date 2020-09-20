@@ -2,14 +2,17 @@
   "name": "use-child-sizes",
   "version": "1.0.0",
   "description": "A React hook to get the sizes of child elements of the specified element.",
-  "author": "hanamura",
+  "author": "Taro Hanamura <m@hanamurataro.com> (https://hanamurataro.com/)",
   "license": "MIT",
-  "repository": "hanamura/use-child-sizes",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hanamura/use-child-sizes.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",

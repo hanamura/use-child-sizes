@@ -41,4 +41,4 @@ const Example = () => {
 
 ## License
 
-MIT © [hanamura](https://github.com/hanamura)
+MIT © [Taro Hanamura](https://github.com/hanamura)
