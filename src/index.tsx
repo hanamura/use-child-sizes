@@ -35,7 +35,7 @@ export function useChildSizes<T extends HTMLElement>(): [RefObject<T>, Size[]] {
     })
 
     for (const el of (ref.current.children as unknown) as Element[]) {
-      ro.observe(el, { box: 'border-box' })
+      ro.observe(el)
     }
 
     const mo = new MutationObserver(() => {
@@ -48,7 +48,7 @@ export function useChildSizes<T extends HTMLElement>(): [RefObject<T>, Size[]] {
       }))
       setSizes(sizes)
       for (const child of (ref.current.children as unknown) as Element[]) {
-        ro.observe(child, { box: 'border-box' })
+        ro.observe(child)
       }
     })
     mo.observe(ref.current, { childList: true })
