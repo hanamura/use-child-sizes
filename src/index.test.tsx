@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { useChildSizes } from '.'
 
-describe('ExampleComponent', () => {
+describe('useChildSizes', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(useChildSizes).toBeTruthy()
   })
 })
